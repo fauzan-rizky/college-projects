@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 	string Nama,TempatLahir,TanggalLahir,JKelamin,Agama,Alamat,NoHP,Status,Email,
-	SkillIT,Bahasa,Pengalaman;
+	SkillIT,Bahasa,Pengalaman,SD,SMP,SMA,Kuliah;
 
 	cout << "Silahkan masukkan data CV yang diminta \n" << endl;
 	cout << "Nama Lengkap? "; getline(cin, Nama);
@@ -20,6 +20,10 @@ int main(){
 	cout << "Skill IT? "; getline(cin, SkillIT);
 	cout << "Bahasa? "; getline(cin, Bahasa);
 	cout << "Pengalaman? "; getline(cin, Pengalaman);
+	cout << "Pendidikan SD? "; getline(cin, SD);
+	cout << "Pendidikan SMP? "; getline(cin, SMP);
+	cout << "Pendidikan SMA? "; getline(cin, SMA);
+	cout << "Pendidikan Kuliah? "; getline(cin, Kuliah);
 
 	cout << "\n-------------------------------------------\n";
 	cout << "\tCURRICULUM VITAE\n";
@@ -36,10 +40,10 @@ int main(){
 	cout << left << setw(20) << "Email" << ": " << Email << endl;
 
 	cout << "\nPENDIDIKAN\n";
-	cout << left << setw(20) << "SD" << ": " << endl;
-	cout << left << setw(20) << "SMP" << ": " << endl;
-	cout << left << setw(20) << "SMA" << ": " << endl;
-	cout << left << setw(20) << "Kuliah" << ": " << endl;
+	cout << left << setw(20) << "SD" << ": " << SD << endl;
+	cout << left << setw(20) << "SMP" << ": " << SMP << endl;
+	cout << left << setw(20) << "SMA" << ": " << SMA << endl;
+	cout << left << setw(20) << "Kuliah" << ": " << Kuliah << endl;
 
 	cout << "\nKEMAMPUAN/SKILLS\n";
 	cout << left << setw(20) << "IT" << ": " << SkillIT << endl;

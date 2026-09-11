@@ -4,12 +4,12 @@
 using namespace std;
 
 int main(){
-	string provinsi,kabupaten,NIK,NamaLengkap,TempTanHir,JKelamin, GolDarah,
+	string provinsi,kabupatenkota,NIK,NamaLengkap,TempTanHir,JKelamin, GolDarah,
 	Alamat,RtRw,KelDesa,Kecamatan,Agama,StatusKawin,Pekerjaan,Kewarganegaraan
 	,BerlakuHingga;
 	cout << "Silahkan masukkan data yang diminta \n" << endl;
-	cout << "Provinsi? "; cin >> provinsi;
-	cout << "Kabupaten? "; cin >> kabupaten;
+	cout << "Provinsi? "; getline(cin, provinsi);
+	cout << "Kabupaten/Kota? "; getline(cin, kabupatenkota);
 	cout << "NIK? "; cin >> NIK;
 	cin.ignore();
 	cout << "Nama Lengkap? "; getline(cin, NamaLengkap);
@@ -28,9 +28,9 @@ int main(){
 	Kewarganegaraan = "Indonesia";
 	BerlakuHingga = "Seumur Hidup";
 
-	cout << "\n-------------------------------------------\n";
-	cout << "\t\tPROVINSI " << provinsi << endl;;
-	cout << "\t\tKABUPATEN " << kabupaten << endl;
+	cout << "\n------------------------------------------------------------------\n";
+	cout << "\t\t\tPROVINSI " << provinsi << endl;;
+	cout << "\t\t\tKABUPATEN/KOTA " << kabupatenkota << "\n" << endl;
 	cout << left << setw(20) << "NIK" << ": " << NIK << endl;
 	cout << left << setw(20) << "Nama" << ": " << NamaLengkap << endl;
 	cout << left << setw(20) << "Tempat/Tgl Lahir" << ": " << TempTanHir << endl;
@@ -45,4 +45,5 @@ int main(){
 	cout << left << setw(20) << "Pekerjaan" << ": " << Pekerjaan << endl;
 	cout << left << setw(20) << "Kewarganegaraan" << ": " << Kewarganegaraan << endl;
 	cout << left << setw(20) << "Berlaku Hingga" << ": " << BerlakuHingga << endl;
+	cout << "\n------------------------------------------------------------------\n";
 }
