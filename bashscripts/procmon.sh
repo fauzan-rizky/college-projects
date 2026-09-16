@@ -7,7 +7,7 @@ while true; do
     echo "================================="
     echo "       PROCESS MONITOR"
     echo "================================="
-    echo "1. Show all processes"
+    echo "1. Show all processes (q to quit)"
     echo "2. Top CPU Processes"
     echo "3. Top Memory Processes"
     echo "4. Find process by name"
