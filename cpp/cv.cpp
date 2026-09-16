@@ -6,6 +6,11 @@ using namespace std;
 int main(){
 	string Nama,TempatLahir,TanggalLahir,JKelamin,Agama,Alamat,NoHP,Status,Email,
 	SkillIT,Bahasa,Pengalaman,SD,SMP,SMA,Kuliah;
+	auto Nama = "John Doe";
+	auto TempatLahir = "Silicon Valley";
+	auto TanggalLahir = "Friday 13th";
+	auto JKelamin = "Unknown";
+	auto Agama = "Islam";
 
 	cout << "Silahkan masukkan data CV yang diminta \n" << endl;
 	cout << "Nama Lengkap? "; getline(cin, Nama);
