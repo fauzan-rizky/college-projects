@@ -45,14 +45,18 @@ while true; do
             ;;
         5)
             # Menghentikan process berdasarkan PID
-            echo -n "Masukkan PID process yang ingin dihentikan: "
+        echo -n "Masukkan PID process yang ingin dihentikan: "
             read pid
             if [ -z "$pid" ]; then
                 echo "PID tidak boleh kosong."
+            elif ! [[ "$pid" =~ ^[0-9]+$ ]]; then
+                echo "PID harus berupa angka."
+            elif ! pstree -p | grep -q "\b$pid\b"; then
+                echo "Process by PID not found"
             else
                 echo "Mengirim sinyal terminasi ke PID $pid..."
-                kill $pid
-                echo "Process $pid telah dihentikan."
+                kill "$pid" 2>/dev/null && echo "Process $pid telah dihentikan." \
+                    || echo "Gagal menghentikan process $pid."
             fi
             ;;
         6)
