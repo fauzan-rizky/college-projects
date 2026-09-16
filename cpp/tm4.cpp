@@ -62,4 +62,18 @@ int main(){
             cout << "----------------------------------- (-)" << endl;
             cout << "Sisa uang saku: Rp. " << uang_saku_awal-uang_belanja << endl; 
         }
-}
+    if (userOption == "2"){
+            int bilangan = 0;
+            string bilangan_placeholder, status;
+            cout << "Pengecekan bilangan JilNaPrima: " << endl;
+            cout << "> "; getline(cin, bilangan_placeholder);
+
+            bilangan = convert_to_int(bilangan_placeholder);
+
+            if (bilangan%2 == 0){
+                status = "Genap";
+            } else {
+                status = "Ganjil";
+            }
+        }
+    }
