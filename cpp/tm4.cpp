@@ -1,9 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include <list>
 using namespace std;
-
-
 
 int convert_to_int(string number)
 {
