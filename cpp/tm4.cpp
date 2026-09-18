@@ -3,7 +3,7 @@
 #include <list>
 using namespace std;
 
-string userOption;
+
 
 int convert_to_int(string number)
 {
@@ -38,14 +38,13 @@ void sisa_saldo()
     int uang_saku_awal, total, sisa_saldo;
     total = 0;
     uang_saku_awal = 0;
-    // Aktivitas pengeluaran sehari
     string aktivitas[100];
     int pengeluaran[100];
     int iterator = 0;
 
     cout << "Masukkan saldo awal: ";
-    getline(cin, userOption);
-    uang_saku_awal = convert_to_int(userOption);
+    getline(cin, userInput);
+    uang_saku_awal = convert_to_int(userInput);
 
     cout << "\n*Kosongkan input bila sudah tidak ada aktivitas lagi" << endl;
     while (true){
@@ -95,6 +94,7 @@ void jilnaprima()
 
     bilangan = convert_to_int(bilangan_placeholder);
 
+    //Pengecekan Ganjil/Genap
     if (bilangan % 2 == 0)
     {
         status = "genap";
@@ -104,6 +104,7 @@ void jilnaprima()
         status = "ganjil";
     }
 
+    //Pengecekan Prima
     if (bilangan <= 1)
     {
         prima = false;
@@ -153,7 +154,9 @@ void login()
 }
 
 int main()
+
 {
+    string userOption;
 
     while (true)
     {
