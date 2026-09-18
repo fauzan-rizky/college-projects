@@ -32,12 +32,12 @@ string get_init_option()
 void sisa_saldo()
 {
     string userInput;
-    int uang_saku_awal, total, sisa_saldo;
+    int uang_saku_awal, total;
     total = 0;
     uang_saku_awal = 0;
     string aktivitas[100];
     int pengeluaran[100];
-    int iterator = 0;
+    int count = 0;
 
     cout << "Masukkan saldo awal: ";
     getline(cin, userInput);
@@ -45,31 +45,31 @@ void sisa_saldo()
 
     cout << "\n*Kosongkan input bila sudah tidak ada aktivitas lagi" << endl;
     while (true){
-        cout << "Masukkan aktivitas ke " << iterator+1 << ": ";
+        cout << "Masukkan aktivitas ke " << count+1 << ": ";
         getline(cin, userInput);
 
         if (userInput == ""){
             break;
         } else {
-            aktivitas[iterator] = userInput;
+            aktivitas[count] = userInput;
         }
 
         cout << "Masukkan nominal pengeluaran: ";
         getline(cin, userInput);
 
         if (userInput == ""){
-            pengeluaran[iterator] = 0;
+            pengeluaran[count] = 0;
         } else {
-            pengeluaran[iterator] = convert_to_int(userInput);
+            pengeluaran[count] = convert_to_int(userInput);
         }
         cout << "\n";
-        iterator++;
+        count++;
     }
 
     cout << "\n";
     cout << left << setw(29) << "Uang saku awal: " << "Rp. " << uang_saku_awal << endl;
     cout << "---------------------------------------- (-)" << endl;
-    for (int i=0; i<iterator; i++){
+    for (int i=0; i<count; i++){
         cout << left << setw(0) << (i+1) << ". ";
         cout << left << setw(25) << aktivitas[i] << right << setw(5) << "Rp. " << pengeluaran[i] << endl;
         total+= pengeluaran[i];
