@@ -7,7 +7,7 @@ int convert_to_int(string number){
         int convertednum = stoi(number);
         return convertednum;
     } catch (const invalid_argument& e) {
-        cout << "Err! entered string cannot be converted to integer" << endl;
+        cout << "Err! string yang dimasukan tidak bisa diubah ke integer" << endl;
         return -1;
         exit;
     }
@@ -16,9 +16,9 @@ int convert_to_int(string number){
 string get_init_option(){
     string userInput;
     cout << "Pilih kasus yg ingin dijalankan" << endl;
-    cout << "1. Mencari sisa uang saku dari belanja bulanan \n" << 
-    "2. Mencari Bilangan ganjil atau genap dan apakah bilangan tersebut prima\n"  <<
-    "3. ???" << endl;
+    cout << "1. Mencari sisa saldo dari pengeluaran 1 hari \n" << 
+    "2. Mengecek Bilangan ganjil atau genap dan apakah bilangan tersebut prima\n"  <<
+    "3. Demonstrasi login sederhana" << endl;
 
     cout << "\n> "; getline(cin, userInput);
     return userInput;
@@ -31,7 +31,6 @@ int main(){
         userOption = get_init_option();
 
         if (userOption == "1" || userOption == "2" || userOption == "3"){
-            cout << "correct choice" << endl;
             break;
         } else {
             continue;
@@ -62,18 +61,56 @@ int main(){
             cout << "----------------------------------- (-)" << endl;
             cout << "Sisa uang saku: Rp. " << uang_saku_awal-uang_belanja << endl; 
         }
-    if (userOption == "2"){
+    else if (userOption == "2"){
             int bilangan = 0;
             string bilangan_placeholder, status;
+            bool prima = true;
             cout << "Pengecekan bilangan JilNaPrima: " << endl;
             cout << "> "; getline(cin, bilangan_placeholder);
 
             bilangan = convert_to_int(bilangan_placeholder);
 
             if (bilangan%2 == 0){
-                status = "Genap";
+                status = "genap";
             } else {
-                status = "Ganjil";
+                status = "ganjil";
+            }
+
+            if (bilangan <= 1){
+                prima = false;
+            } 
+
+            for (int i = 2; i<bilangan; i++){
+                if (bilangan%i == 0){
+                    prima = false;
+                } 
+            }
+
+            if (prima == true){
+                cout << "Bilangan " << bilangan << 
+                " merupakan bilangan " << status << " dan prima";
+            } else {
+                cout << "Bilangan " << bilangan << 
+                " merupakan bilangan " << status << " tapi bukan prima";
             }
         }
+    else if (userOption == "3"){
+            string valid_username = "admin";
+            string valid_password = "12345";
+
+            string entered_username, entered_password;
+            cout << "+----------------------------+" << endl;
+            cout << "|    LOGIN PEENJEH PANEL     |" << endl;
+            cout << "+----------------------------+" << endl;
+            cout << "\nUsername: "; getline(cin, entered_username);
+            cout << "\nPassword: "; getline(cin, entered_password);
+            cout << "\n";
+
+            if (entered_username == valid_username && entered_password == valid_password){
+                cout << "ACCESS GRANTED!" << endl;
+            } else {
+                cout << "INCORRECT CREDENTIALS\nYOU SHALL NOT PASS!!!" << endl;
+            }
+
+    }
     }
