@@ -76,7 +76,7 @@ void sisa_saldo()
         cout << left << setw(0) << (i+1) << ". ";
         cout << left << setw(25) << aktivitas[i] << right << setw(5) << "Rp. " << pengeluaran[i] << endl;
         total+= pengeluaran[i];
-}
+    }
     cout << "\n";
     cout << left << setw(29) << "Total: " << "Rp. " << total << endl;
     cout << "---------------------------------------- (=)" << endl;
