@@ -32,7 +32,7 @@ string get_init_option()
     cout << "1. Izin bawa motor \n"
          << "2. Diskon 10 persen apabila lebih dari 100k \n"
          << "3. Tarif parkir \n"
-         << "4. Nilai ujian \n"
+         << "4. Diskon berdasarkan umur \n"
          << "5. Hitung BMI \n"
          << "6. Gaji karyawan" << endl;
 
@@ -108,7 +108,7 @@ void tarifparkir()
     cout << "TOTAL TARIF PARKIR SELAMA " << jam << " JAM: Rp. " << biaya << endl;
 }
 
-void nilai_ujian()
+void diskon_umur()
 {
     int umur, harga, bayar;
     cout << "SISTEM DISKON BERDASARKAN UMUR" << endl;
@@ -199,7 +199,7 @@ int main()
     }
     else if (option == "4")
     {
-        nilai_ujian();
+        diskon_umur();
     }
     else if (option == "5")
     {
