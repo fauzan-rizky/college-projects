@@ -135,7 +135,7 @@ void diskon_umur()
     cout << "Total bayar: Rp. " << bayar << endl;
 }
 
-void hitung_bmi()
+void diskon_voucher()
 {
     int totalBelanja;
     cout << "SISTEM VOUCHER BELANJA" << endl;
@@ -156,7 +156,7 @@ void hitung_bmi()
     }
 }
 
-void gaji_karyawan()
+void notif_baterai()
 {
     int baterai;
     cout << "CEK STATUS BATERAI PERANGKAT" << endl;
@@ -203,11 +203,11 @@ int main()
     }
     else if (option == "5")
     {
-        hitung_bmi();
+        diskon_voucher();
     }
     else if (option == "6")
     {
-        gaji_karyawan();
+        notif_baterai();
     }
     else
     {
