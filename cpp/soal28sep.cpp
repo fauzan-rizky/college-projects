@@ -167,12 +167,12 @@ void x_square_exp(int height)
     string status = "descending";
     char edge, border_vertical, border_horizontal, center, rightup, leftup;
     string space = " "; // Ntah kenapa gabisa whitespace
-    edge = '*';
-    center = '*';
-    rightup = '*';
-    leftup = '*';
-    border_horizontal = '*';
-    border_vertical = '*';
+    edge = '+';
+    center = 'X';
+    rightup = '/';
+    leftup = '\\';
+    border_horizontal = '-';
+    border_vertical = '|';
 
     for (int rows = 0; rows < height; rows++)
     {
