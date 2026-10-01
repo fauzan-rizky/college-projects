@@ -35,18 +35,20 @@ int make_it_odd(int num)
     return num;
 }
 
-int make_it_even(int num){
-    if (num%2 == 1){
+int make_it_even(int num)
+{
+    if (num % 2 == 1)
+    {
         num += 1;
     }
 
     return num;
 }
 
-void standard_triangle(int length)
+void standard_triangle(int height)
 {
     int asterisk_len = 1;
-    for (int rows = length; rows > 0; rows--)
+    for (int rows = height; rows > 0; rows--)
     {
         for (int columns = 0; columns < rows; columns++)
         {
@@ -65,12 +67,12 @@ void standard_triangle(int length)
     }
 }
 
-void ceil_triangle(int length)
+void ceil_triangle(int height)
 {
-    length *= 2;
-    length += 1;
+    height *= 2;
+    height += 1;
     int space_len = 0;
-    for (int rows = length; rows > 0; rows -= 2)
+    for (int rows = height; rows > 0; rows -= 2)
     {
         for (int space_left = 0; space_left < space_len; space_left++)
         {
@@ -90,43 +92,43 @@ void ceil_triangle(int length)
     }
 }
 
-void rhombus(int length)
+void rhombus(int height)
 {
-    standard_triangle(length / 2);
-    ceil_triangle(length / 2);
+    standard_triangle(height / 2);
+    ceil_triangle(height / 2);
 }
 
-void x_square(int length)
+void x_square(int height)
 {
-    if (length < 5)
+    if (height < 5)
     {
-        cout << "Minimal Length: 5" << endl;
-        cout << "Automatically set length to 5 instead for X Square format" << endl;
-        length = 5;
+        cout << "Minimal height: 5" << endl;
+        cout << "Automatically set height to 5 instead for X Square format" << endl;
+        height = 5;
     }
 
     int l = 1;
 
-    for (int rows = 0; rows < length; rows++)
+    for (int rows = 0; rows < height; rows++)
     {
-        if (rows == 0 || rows == length - 1)
+        if (rows == 0 || rows == height - 1)
         {
-            for (int columns = 0; columns < length; columns++)
+            for (int columns = 0; columns < height; columns++)
             {
                 cout << "#";
             }
         }
         else
         {
-            for (int columns = 0; columns < length; columns++)
+            for (int columns = 0; columns < height; columns++)
             {
-                if (columns == 0 || columns == length - 1)
+                if (columns == 0 || columns == height - 1)
                 {
                     cout << "#";
                 }
                 else
                 {
-                    if (columns == l || columns == length - (l + 1))
+                    if (columns == l || columns == height - (l + 1))
                     {
                         cout << "X";
                     }
@@ -137,7 +139,7 @@ void x_square(int length)
                 }
             }
 
-            if (rows < length / 2)
+            if (rows < height / 2)
             {
                 l++;
             }
@@ -151,34 +153,34 @@ void x_square(int length)
     }
 }
 
-void x_square_exp(int length)
+void x_square_exp(int height)
 {
-    length = make_it_odd(length);
-    if (length < 5)
+    height = make_it_odd(height);
+    if (height < 5)
     {
-        cout << "Minimal Length: 5" << endl;
-        cout << "Automatically set length to 5 instead for X Square format" << endl;
-        length = 5;
+        cout << "Minimal height: 5" << endl;
+        cout << "Automatically set height to 5 instead for X Square format" << endl;
+        height = 5;
     }
 
     int l = 1;
     string status = "descending";
     char edge, border_vertical, border_horizontal, center, rightup, leftup;
     string space = " "; // Ntah kenapa gabisa whitespace
-    edge = '+';
-    center = 'X';
-    rightup = '/';
-    leftup = '\\';
-    border_horizontal = '-';
-    border_vertical = '|';
+    edge = '*';
+    center = '*';
+    rightup = '*';
+    leftup = '*';
+    border_horizontal = '*';
+    border_vertical = '*';
 
-    for (int rows = 0; rows < length; rows++)
+    for (int rows = 0; rows < height; rows++)
     {
-        if (rows == 0 || rows == length - 1) // Baris awal sama akhir
+        if (rows == 0 || rows == height - 1) // Baris awal sama akhir
         {
-            for (int columns = 0; columns < length; columns++)
+            for (int columns = 0; columns < height; columns++)
             {
-                if (columns == 0 || columns == length - 1)
+                if (columns == 0 || columns == height - 1)
                 {
                     cout << edge;
                 }
@@ -188,15 +190,15 @@ void x_square_exp(int length)
                 }
             }
         }
-        else if (rows == length / 2) // Baris tengah
+        else if (rows == height / 2) // Baris tengah
         {
-            for (int columns = 0; columns < length; columns++)
+            for (int columns = 0; columns < height; columns++)
             {
-                if (columns == 0 || columns == length - 1) // Border
+                if (columns == 0 || columns == height - 1) // Border
                 {
                     cout << border_vertical;
                 }
-                else if (columns == length / 2) // Tengahnya
+                else if (columns == height / 2) // Tengahnya
                 {
                     cout << center;
                 }
@@ -211,16 +213,16 @@ void x_square_exp(int length)
         }
         else // Baris selain awal akhir sm tengah
         {
-            for (int columns = 0; columns < length; columns++)
+            for (int columns = 0; columns < height; columns++)
             {
-                if (columns == 0 || columns == length - 1) // Kolom kiri sm kanan jadi border
+                if (columns == 0 || columns == height - 1) // Kolom kiri sm kanan jadi border
                 {
                     cout << border_vertical;
                 }
 
                 else // Kolom lainnya
                 {
-                    if (columns == l || columns == length - (l + 1)) // Cout si garis miring
+                    if (columns == l || columns == height - (l + 1)) // Cout si garis miring
                     {
                         if (columns == l)
                         {
@@ -264,14 +266,14 @@ void x_square_exp(int length)
     }
 }
 
-void sierpinski_triangle(int length)
+void sierpinski_triangle(int height)
 {
-    length = make_it_even(length);
+    height = make_it_even(height);
     int asterisk_len = 1;
     int little_triangles = 3;
-    for (int rows = length; rows > 0; rows--)
+    for (int rows = height; rows > 0; rows--)
     {
-        if (rows == length / 2)
+        if (rows == height / 2)
         {
             for (int columns = 0; columns < rows; columns++)
             {
@@ -279,40 +281,43 @@ void sierpinski_triangle(int length)
             }
             for (int k = 0; k < asterisk_len; k++)
             {
-                if (k == 0 || k == asterisk_len-1){
+                if (k == 0 || k == asterisk_len - 1)
+                {
                     cout << "#";
-                } else {
+                }
+                else
+                {
                     cout << " ";
                 }
-                
             }
             for (int columns = 0; columns < rows; columns++)
             {
                 cout << " ";
             }
         }
-        else if (rows < (length/2 +0)){
-            
+        else if (rows < (height / 2 + 0))
+        {
+
             for (int columns = 0; columns < rows; columns++)
             {
                 cout << " ";
             }
             for (int k = 0; k < asterisk_len; k++)
             {
-                if (k >= little_triangles && k <= asterisk_len-(little_triangles+1)){
+                if (k >= little_triangles && k <= asterisk_len - (little_triangles + 1))
+                {
                     cout << " ";
                 }
-                else {
+                else
+                {
                     cout << "#";
                 }
-                
-                
             }
             for (int columns = 0; columns < rows; columns++)
             {
                 cout << " ";
             }
-            little_triangles+=2;
+            little_triangles += 2;
         }
         else
         {
@@ -335,20 +340,22 @@ void sierpinski_triangle(int length)
     }
 }
 
-void println(string output){
+void println(string output)
+{
     cout << output << endl;
 }
 
-string inputln(string prompt){
+string inputln(string prompt)
+{
     string userInput;
     cout << prompt;
     getline(cin, userInput);
 
     return userInput;
-    
 }
 
-int get_options(){
+int get_options()
+{
     println("AlPro ASCII Triangle Shapes");
     println("1. Sierpinski Triangle");
     println("2. Rhombus (belah ketupat)");
@@ -365,13 +372,20 @@ int main()
     println("Input height: ");
     int len = input_stoi();
 
-    if (userSelect == 1){
+    if (userSelect == 1)
+    {
         sierpinski_triangle(len);
-    } else if (userSelect == 2){
+    }
+    else if (userSelect == 2)
+    {
         rhombus(len);
-    } else if (userSelect == 3){
+    }
+    else if (userSelect == 3)
+    {
         x_square_exp(len);
-    } else {
+    }
+    else
+    {
         println("What?");
     }
 }
